@@ -1,0 +1,10 @@
+\small
+\textbf{Tools.} Anthropic Claude (Sonnet 5.5, claude.ai) was used as a coding and writing assistant. GNU Octave 8.4 was used for simulation and plotting, and TeX Live for typesetting.
+
+\textbf{Done by the team.} We derived the mathematical model and design by hand (handwritten derivations available): the geared DC-motor plant $G_p(s)$ from the electrical and mechanical equations, the equivalent inertia, the target motion and Singer-model equations, the EKF formulation, the extrapolation to $t+T_p$, and the PI compensator design. We chose the design approach and told the AI what to implement and how, ran and tested all simulations ourselves, and directed the changes made after review: adding firing logic and interception metrics, removing the code that wrote LaTeX, and copying the paper's numbers by hand from the CSV files in \texttt{results/data}.
+
+\textbf{Done by the AI.} Following our instructions, Claude wrote the Octave code (plant, estimator, predictor, controller, firing gate, automated checks, figures), ran the estimator-parameter and firing-gate tuning scripts and reported their results to us, set up the LaTeX, and drafted and rewrote the report wording from our results.
+
+\textbf{Checks.} Our hand calculations were compared with the simulated results. The code also runs ten automated checks before each simulation (units, transfer function against state space, closed-form $\omega_n,\zeta$, energy balance, EKF Jacobian against finite differences, noise-free prediction, Routh limit against the numerical gain margin). The EKF innovation statistic (NIS) was close to 2, and the firing gate was replayed offline against the in-loop gate.
+
+\textbf{Limits.} Results are Octave simulations only. The tuning set, scenarios and random test cases are separate. The pulse-scoring convention (target at $t_{fire}+T_p$) is an assumption not confirmed with the instructor.

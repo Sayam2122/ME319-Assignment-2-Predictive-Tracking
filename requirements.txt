@@ -1,0 +1,13 @@
+# ME319 Assignment 2 - software requirements (MATLAB/Octave project; no pip packages needed)
+#
+# Option 1: MATLAB R2019b or newer
+#     Required toolbox : Control System Toolbox   (tf, ss, feedback, margin, rlocus, step, freqresp)
+#     Base functions   : expm, cumtrapz, interp-free code only (no Statistics / Signal toolbox)
+#
+# Option 2: GNU Octave >= 7 (developed and verified with Octave 8.4.0)
+#     Required package : control (>= 4.0)      ->  pkg install -forge control
+#                        (Debian/Ubuntu: sudo apt install octave octave-control gnuplot)
+#     Plotting         : gnuplot graphics toolkit (headless PNG/PDF export)
+#
+# Paper (optional): a LaTeX distribution with IEEEtran, cite, amsmath, booktabs, tikz
+#                   (TeX Live: texlive-publishers, texlive-pictures, texlive-science)
