@@ -19,16 +19,56 @@ pulse rules and scores each pulse by beam-to-target distance (R_eng = 2 m) again
 (assumption; the alternative reading, target at t_fire, is reported as well and is one switch, `P.eng.delay`).
 Interception success, time and miss distance are reported for A–C and for random unseen cases.
 
-## Repository structure
+## Repository Structure
+
+```text
+ME319-Assignment-2-Predictive-Tracking/
+│
+├── matlab/
+│   ├── main.m
+│   ├── parameters.m
+│   ├── system_model.m
+│   ├── target_motion_generator.m
+│   ├── state_estimator.m
+│   ├── target_predictor.m
+│   ├── ca_singer_model.m
+│   ├── controller_design.m
+│   ├── turret_controller.m
+│   ├── turret_plant.m
+│   ├── simulation_runner.m
+│   ├── performance_metrics.m
+│   ├── step_metrics.m
+│   ├── automated_checks.m
+│   ├── design_study.m
+│   ├── robustness_study.m
+│   ├── random_scenario.m
+│   ├── fire_tuning.m
+│   ├── make_figures.m
+│   └── write_results_csv.m
+│
+├── results/
+│   ├── figures/
+│   └── data/
+│
+├── paper/
+│   ├── main.tex
+│   ├── references.bib
+│   ├── ai_appendix.tex
+│   └── main.pdf
+│
+├── docs/
+│   └── AI_usage.md
+│
+├── README.md
+└── LICENSE
 ```
-matlab/   fire_tuning.m  parameters.m  system_model.m  target_motion_generator.m  state_estimator.m
-          target_predictor.m  ca_singer_model.m  controller_design.m  turret_controller.m
-          turret_plant.m  simulation_runner.m  performance_metrics.m  step_metrics.m
-          automated_checks.m  design_study.m  robustness_study.m  random_scenario.m
-          make_figures.m  write_results_csv.m  main.m
-results/  figures/ (PNG)   data/ (MAT, CSV)
-paper/    main.tex  references.bib  ai_appendix.tex   (written by hand; no code generates it)
-docs/     AI_usage.md
+
+### Folder Description
+
+- **`matlab/`** – MATLAB source code for system modelling, target motion generation, state estimation, prediction, controller design, simulation and performance evaluation.
+- **`results/`** – Generated simulation figures and result data in PNG, MAT and CSV formats.
+- **`paper/`** – LaTeX source files, bibliography, AI usage appendix and compiled assignment report.
+- **`docs/`** – Additional project documentation and AI usage details.
 ```
 The three assignment interfaces are kept: `target_motion_generator`, `turret_controller`, `turret_plant`.
 Extra optional outputs (ground truth, diagnostics) do not change the 3-output/2-output calls.
